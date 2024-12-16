@@ -2,15 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:gsheets/gsheets.dart';
 
-//? speardsheet id, got from url: https://docs.google.com/spreadsheets/d/1TZiWjji3QR81u1EcZaX_RrQBoJgheoZmjRR1t_mVCM4/edit?gid=0#gid=0
-const spreadsheetId = '1TZiWjji3QR81u1EcZaX_RrQBoJgheoZmjRR1t_mVCM4';
-
 void main() async {
   // loading secret file
   await dotenv.load();
 
   // loading secret data
   String creditionals = dotenv.env['API_KEY'] ?? "";
+
+  final String spreadsheetId = dotenv.env['SPREADSHEET_ID'] ?? "";
 
   // init Gsheets
   final gsheets = GSheets(creditionals);
