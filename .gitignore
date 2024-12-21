@@ -44,3 +44,5 @@ app.*.map.json
 
 # Secret file should not included on github repo
 .env
+flutter-expense-tracker-creaditional.json
+secret.dart
